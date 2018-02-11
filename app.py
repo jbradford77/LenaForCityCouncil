@@ -1,28 +1,57 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine, asc
+from sqlalchemy.orm import sessionmaker
+from database_setup import Base, Blogpost
+from datetime import datetime
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///campaign.db'
+# Connect to Database and create database session
+engine = create_engine('sqlite:///blog.db')
+Base.metadata.bind = engine
 
-db = SQLAlchemy(app)
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    posts = session.query(Blogpost).all()
+    
+    return render_template('index.html', posts=posts)
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/bio')
+def bio():
+    return render_template('bio.html')
 
-@app.route('/post')
-def post():
-    return render_template('post.html')
+@app.route('/issues')
+def issues():
+    return render_template('issues.html')
+
+@app.route('/post/<int:post_id>')
+def post(post_id):
+    post = session.query(Blogpost).filter_by(id=post_id).one()
+
+    return render_template('post.html', post=post)
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@app.route('/add')
+def add():
+    return render_template('add.html')
+
+@app.route('/addpost', methods=['POST'])
+def addpost():
+
+    if request.method == 'POST':
+        newPost = Blogpost(title=request.form['title'], subtitle=request.form['subtitle'], author=request.form['author'], content=request.form['content'], date_posted=datetime.now())
+
+        session.add(newPost)
+        session.commit()
+        return redirect(url_for('index'))
 
 
 
