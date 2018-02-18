@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include 'header.html' %}
+
+  <body>
+
+    <!-- Navigation -->
+    {% include 'nav.html' %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='post-bg2.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Register to Vote!</h1>
+              <span class="subheading">To vote in the April 10, 2018 election, you must be registered by Monday, March 19, 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h3>District 5 Polling Location</h3>
+          <p>First Presbyterian Church, 292 West Main Street</p>
+          <h3>Date and Time</h3>
+          <p>Tuesday, April 10, 2018. </p>
+          <p>Polls open at 7:00 a.m. and close at 8:00 p.m</p>
+          <h3>Want to check if you live in distric 5?</h3>
+          <p>Check out the <a href="https://cityofnewarkde.maps.arcgis.com/home/signin.html?returnUrl=https%3A//cityofnewarkde.maps.arcgis.com/apps/webappviewer/index.html%3Fid%3D59f095b7200943369a9a8c87bd683b29">The City of Newark Election Polling Places application</a></p>
+          <h3>Want more general Newark election info?</h3>
+          <p>Here's the City of Newark's <a href="https://newarkde.gov/508/2018-City-Election-Information">election information page</a></p>
+          <h3>You can go to the <a href="https://ivote.de.gov/default.aspx">State of Delaware's voter registration site</a> and check to make sure you're already registered to vote</h3>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src=" {{ url_for('static', filename='clean-blog.min.js') }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+  </body>
+
+</html>

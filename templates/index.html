@@ -28,25 +28,12 @@
       <div class="row">
         <div class="col-lg-1 col-md-1"></div>
         <div class="col-lg-7 col-md-7">
-          {% for post in posts %}
-          <div class="post-preview">
-            <a href="{{ url_for('post', post_id=post.id) }}">
-              <h2 class="post-title">
-                {{ post.title }}
-              </h2>
-              <h3 class="post-subtitle">
-                {{ post.subtitle }}
-              </h3>
-            </a>
-            <p class="post-meta">Posted by {{ post.author }}</p>
-          </div>
-          {% endfor %}
-          <hr>
-          <!-- Pager -->
+          <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="65523/"></script> <!-- end feedwind code -->
         </div>
         <div class="col-lg-3 col-md-3 sidebar">
           <img width="100%" src="{{url_for('static', filename='lena-2948-72-dpi-for-websites.jpg')}}" />
-          <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="65523/"></script> <!-- end feedwind code -->
+          <h2>A Note from Lena</h2>
+          <p>I look forward to serving on City Council to represent all residents of the 5th district, while bringing a more visible voice to our neighborhoods and keeping you engaged and up to date on the happenings within our truly blessed community. One of the things I enjoy most about our area is the fact that at anytime we can experience nature in our backyards, I want to ensure that it remains that way for years to come.</p>
         </div>
         <div class="col-lg-1 col-md-1"></div>
       </div>
