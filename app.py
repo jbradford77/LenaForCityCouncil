@@ -43,9 +43,9 @@ def issues():
     return render_template('issues.html')
 
 
-@app.route('/register')
-def register():
-    return render_template('register.html')
+@app.route('/howToVote')
+def howToVote():
+    return render_template('howToVote.html')
 
 
 
