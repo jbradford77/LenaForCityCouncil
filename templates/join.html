@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include 'header.html' %}
+
+  <body>
+
+    <!-- Navigation -->
+    {% include 'nav.html' %}
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='post-bg2.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Join Us!</h1>
+              <span class="subheading">Vote April 10, 2018!</span>
+              <span class="subheading">Register by Monday, March 19</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h5>We are a small grassroots team and can definitely use your help and support in any way you are willing to pitch in! Representing the 5th District for a brighter future for us all is the top priority and volunteers like yourself are needed to help us get there.  Not experienced in Politics? That's OK! Anyone that is willing to help out is welcome and can bring talent to this dedicated team.  If you would like to contribute in any way please email <a href="mailto:lena@lenafornewark.org"> lena@lenafornewark.org </a> and let me know how you would like to best help our efforts.</h5>
+          <p>I look forward to hearing from you and working together for a successful campaign and future for the 5th! </p>
+          <hr>
+          <h3>Areas where we can use YOUR help: </h3>
+          <ul>
+            <li><strong>Host us for an evening with friends:</strong>  We would be honored to visit your home with your friends and neighbors to discuss the vision for the 5th, kick back and have an informal conversation about issues facing Newark.  Hosts are asked to provide light snacks and drinks. 2 - 3 hour time commitment.</li>
+            <li><strong>Yard signs: </strong> Show your support for our campaign by putting up a yard sign. Email your address and we’ll get a sign out to you as soon as we have them in stock.</li>
+            <li><strong>Help Distribute Literature: </strong> All it takes is an hour or two and this can be done solo or with friends!  </li>
+            <li><strong>Take a walk with me: </strong> It is my goal to talk with all of our neighbors throughout the campaign.  Sometimes, it would be nice to have a buddy. Take a walk with me, get to know our neighbors together and burn some calories in the process! This would be a 2 - 3 hour commitment.</li>
+            <li><strong>Donate: </strong> Any amount you are willing to provide will be greatly appreciated to our efforts to help offset costs of getting the word out.  Please see our donation page for more info.</li>
+            <li><strong>Election Day: </strong> Join us on April 10th as we greet voters and thank them for voting.  I intend to be there for as long as possible and can use support in some drop in visits and/or some volunteers to hang out for a few hours and keep the momentum going!</li>
+          </ul>
+          <h3>We truly appreciate any way you can contribute to our campaign and hope to hear from you soon! </h3>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    {% include 'footer.html' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src=" {{ url_for('static', filename='clean-blog.min.js') }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+  </body>
+
+</html>

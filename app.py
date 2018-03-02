@@ -56,9 +56,13 @@ def contact():
 def donate():
     return render_template('donate.html')
 
+@app.route('/join')
+def join():
+    return render_template('join.html')
+
 
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
-    app.debug = False
-    app.run(host='0.0.0.0', port=80)
+    app.debug = True
+    app.run(host='0.0.0.0', port=5000)
